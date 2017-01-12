@@ -1,0 +1,192 @@
+			@font-face
+			{
+				font-family: Bitter;
+				src: url('font_bitter_regular.otf');
+			}
+			
+			@font-face
+			{
+				font-family: SourceSansPro;
+				src: url('font_source_sans_pro_regular.ttf');
+			}
+
+			*
+			{
+				font-family: Bitter, Helvetica, sans-serif;
+				
+				margin:0;
+				padding:0;
+				
+				font-size: 100%;
+			}
+			
+			h1
+			{
+				font-size: 3.75em;
+				font-weight: bold;
+				
+				margin:1.125em;
+				text-align:center;
+				
+				margin-bottom: 0;
+				
+				color: #141412;
+			}
+			
+			h2
+			{
+				font: italic 300 1.5em SourceSansPro, Helvetica, sans-serif;
+				
+				margin:1.125em;
+				text-align:center;
+				
+				margin-top: 0;
+				
+				color: #141412;
+			}
+			
+			a
+			{
+				text-decoration: none;
+				color: #ffffff;
+			}
+			
+			html
+			{
+				height:100%;
+				overflow-x:hidden;
+			}
+			
+			body
+			{
+				height:100%;
+			}
+			
+			#wrap
+			{
+				min-height:100%;
+				width:700%;
+				overflow:hidden;
+			}
+			
+			#home, #games, #projects, #tutorials, #blog, #about, #contact
+			{
+				width: 14.2857%;
+				float: left;
+			}
+			
+			ul
+			{
+				position:fixed;
+				width:100%;
+				height: 2.5em;
+				line-height:2.5em;
+				text-align:center;
+				background-color:#ff8000;
+				
+				margin-left: 0;
+				margin-right: 0;
+				margin-top: 0;
+				margin-bottom 0;
+			}
+			
+			li
+			{
+				/*display:inline-block;*/
+				
+				display:inline;
+				
+				margin-left: 0;
+				margin-right: 0;
+				margin-top: 0;
+				margin-bottom 0;
+				
+				padding: 0em 1.6em;
+				
+				font-size: 0.6em;
+			}
+			
+			li:hover
+			{
+				background-color: #141412;
+			}
+			
+			p
+			{
+				margin:3em;
+				text-align:center;
+			}
+			
+			* html ul
+			{
+				position:absolute;
+			}
+			
+			* html
+			{
+				/* background:url(fake.jpg) */
+			}
+			
+			* html #full
+			{
+				height:100%;
+			}
+			
+			.circle
+			{
+				display: block;
+				width: 6em;
+				height: 6em;
+				border-radius: 50%;
+				font-size: 1.25em;
+				color: #ffffff;
+				line-height: 6.25em;
+				text-align: center;
+				text-decoration: none;
+				background: #ff8000;
+				
+				transition: color 0.25s ease;
+				transition: background-color 0.25s ease;
+				
+				border: 0.25em solid #ff8000;
+				
+				margin: 0.125em;
+			}
+			
+			.circle:hover
+			{
+				color: #00ff00;
+				background-color: #ffffff;
+			}
+			
+			.roundrec
+			{
+				display: block;
+				width: 12.25em;
+				height: 6em;
+				border-radius: 1.5em;
+				font-size: 1.25em;
+				color: #ffffff;
+				line-height: 6.25em;
+				text-align: center;
+				text-decoration: none;
+				background: #ff8000;
+				
+				transition: color 0.25s ease;
+				transition: background-color 0.25s ease;
+				
+				border: 0.25em solid #ff8000;
+				
+				margin: 0.125em;
+			}
+			
+			.roundrec:hover
+			{
+				color: #00ff00;
+				background-color: #ffffff;
+			}
+			
+			#title
+			{
+				color: #141412;
+			}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>gameinbucket</title>
+        <meta charset="UTF-8">
+        
+		<link rel="stylesheet" type="text/css" href="default.css" media="screen"/>
+        <script rel="text/javascript" src="default.js"></script>
+		
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		  ga('create', 'UA-50116912-1', 'gameinbucket.com');
+		  ga('send', 'pageview');
+		</script>
+    </head>
+    <body onload="load()">
+		<ul>
+		<li onclick="scrollto('home')"><a>HOME</a></li>
+		<li onclick="scrollto('games')"><a>GAMES</a></li>
+		<li onclick="scrollto('projects')"><a>PROJECTS</a></li>
+		<li onclick="scrollto('tutorials')"><a>TUTORIALS</a></li>
+		<li onclick="scrollto('blog')"><a>BLOG</a></li>
+		<li onclick="scrollto('about')"><a>ABOUT</a></li>
+		<li onclick="scrollto('contact')"><a>CONTACT</a></li>
+		</ul>
+
+		<div id="wrap">
+		<div id="home">
+			<h1><a id="title" onclick="scrollto('home')">gameinbucket</a></h1>
+			<h2>Awesome Sub Title Right Here</h2>
+			<div id="wrapper" style="text-align: center">    
+				<div id="yourdiv" class="circle" style="display: inline-block;" onclick="scrollto('games')">Games</div>
+				<div id="yourdiv" class="circle" style="display: inline-block;" onclick="scrollto('projects')">Projects</div>
+				<div id="yourdiv" class="circle" style="display: inline-block;" onclick="scrollto('tutorials')">Tutorials</div>
+			</div>
+			<div id="wrapper" style="text-align: center">    
+				<div id="yourdiv" class="circle" style="display: inline-block;" onclick="scrollto('blog')">Blog</div>
+				<div id="yourdiv" class="circle" style="display: inline-block;" onclick="scrollto('about')">About</div>
+				<div id="yourdiv" class="circle" style="display: inline-block;" onclick="scrollto('contact')">Contact</div>
+			</div>
+			<p>awesome qoute right here or something</p>
+		</div>
+		<div id="games">
+			<h1><a id="title" onclick="scrollto('home')">games</a></h1>
+			<h2>games n' shit</h2>
+			<div id="wrapper" style="text-align: center">    
+				<a href="./g_thanatopsis.html"><div id="yourdiv" class="roundrec" style="display: inline-block;">Thanatopsis</div></a>
+				<a href="./g_spaceobelisk.html"><div id="yourdiv" class="roundrec" style="display: inline-block;">Space Obelisk</div></a>
+			</div>
+			<p>i can has html</p>
+		</div>
+		<div id="projects">
+			<h1><a id="title" onclick="scrollto('home')">projects</a></h1>
+			<h2>hobby & side work</h2>
+			<div id="wrapper" style="text-align: center">    
+				<a href="./p_linemapy.html"><div id="yourdiv" class="roundrec" style="display: inline-block;">Vector Map Editor</div></a>
+				<a href="./p_texgen.html"><div id="yourdiv" class="roundrec" style="display: inline-block;">Texture Gen</div></a>
+				<a href="./p_base64.html"><div id="yourdiv" class="roundrec" style="display: inline-block;">Base64</div></a>
+				<a href="./p_hexdec.html"><div id="yourdiv" class="roundrec" style="display: inline-block;">Hex To Dec</div></a>
+				<a href="./p_chatroom.html"><div id="yourdiv" class="roundrec" style="display: inline-block;">Chat Room</div></a>
+				<a href="./p_multpong.html"><div id="yourdiv" class="roundrec" style="display: inline-block;">Multiplayer Pong</div></a>
+				<a href="./p_voxels.html"><div id="yourdiv" class="roundrec" style="display: inline-block;">Voxels</div></a>
+			</div>
+			<p>dis is a paragraph</p>
+		</div>
+		<div id="tutorials">
+			<h1><a id="title" onclick="scrollto('home')">tutorials</a></h1>
+			<h2>how to!</h2>
+			<div id="wrapper" style="text-align: center">    
+				<a href="./t_verlet.html"><div id="yourdiv" class="roundrec" style="display: inline-block;">Verlet Physics</div></a>
+				<a href="./t_webgl.html"><div id="yourdiv" class="roundrec" style="display: inline-block;">Setting up WebGl</div></a>
+				<a href="./t_rasterizer.html"><div id="yourdiv" class="roundrec" style="display: inline-block;">Building a Rasterizer</div></a>
+			</div>
+			<p>erro</p>
+		</div>
+		<div id="blog">
+			<h1><a id="title" onclick="scrollto('home')">blog</a></h1>
+			<h2>durr hurr duhh</h2>
+			<div id="wrapper" style="text-align: center">    
+				<a href="./g_thanatopsis.html"><div id="yourdiv" class="roundrec" style="display: inline-block;">Sumthin</div></a>
+				<a href="./g_spaceobelisk.html"><div id="yourdiv" class="roundrec" style="display: inline-block;">Anuder Sumthin</div></a>
+			</div>
+			<p>uhhh?</p>
+		</div>
+		<div id="about">
+			<h1><a id="title" onclick="scrollto('home')">about me</a></h1>
+			<h2>subscript!</h2>
+			<p>
+				“In order for man to succeed in life, God provided him with two means, education and physical activity. Not separately, one for the soul and the other for the body, but for the two together. With these two means, man can attain perfection.” ~Plato
+			</p>
+		</div>
+		<div id="contact">
+			<h1><a id="title" onclick="scrollto('home')">contact me</a></h1>
+			<h2>hello</h2>
+			<div id="wrapper" style="text-align: center">    
+				<a href="https://twitter.com/gameinbucket" target="_blank"><div id="yourdiv" class="roundrec" style="display: inline-block;">Twitter</div></a>
+				<a href="https://github.com/gameinbucket" target="_blank"><div id="yourdiv" class="roundrec" style="display: inline-block;">Github</div></a>
+			</div>
+			<p>good bye</p>
+		</div>
+		</div>
+	</body>
+</html>
