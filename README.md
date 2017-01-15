@@ -1,2 +1,2 @@
 # gameinbucket.github.io
-website
+profile website hosted here https://gameinbucket.github.io/
