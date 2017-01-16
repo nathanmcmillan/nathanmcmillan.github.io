@@ -88,6 +88,10 @@ p {
     text-align:center;
 }
 
+#title {
+    color: #141412;
+}
+
 #content {
     width: 100%;
     float: left;
@@ -157,6 +161,8 @@ p {
     background-color: #ffffff;
 }
 
-#title {
-    color: #141412;
+.photo {
+    display: inline-block;
+    text-align: left;
+    border-radius: 50%;
 }
