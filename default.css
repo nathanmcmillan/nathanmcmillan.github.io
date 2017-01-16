@@ -84,8 +84,8 @@ li:hover {
 }
 
 p {
-    margin:3em;
-    text-align:center;
+    margin: 3em;
+    text-align: center;
 }
 
 #title {
@@ -162,7 +162,7 @@ p {
 }
 
 .photo {
-    display: inline-block;
-    text-align: left;
     border-radius: 50%;
+    width: 12em;
+    height: 12em;
 }
