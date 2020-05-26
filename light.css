@@ -9,133 +9,50 @@
 
 html {
   height: 100%;
-  overflow-x: hidden;
 }
 
 body {
   height: 100%;
 }
 
-h1 {
-  font-size: 3.75em;
-  font-weight: bold;
-  margin: 1.125em;
-  text-align: center;
-  margin-bottom: 0;
-  color: #141412;
+header {
+  width: 64rem;
+  padding: 0 1rem;
+  margin-bottom: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+  display: block;
 }
 
-h2 {
-  font-size: 1.5em;
-  font-style: italic;
-  font-weight: 300;
-  margin: 1.125em;
-  text-align: center;
-  margin-top: 0;
-  color: #141412;
-}
-
-ul {
-  position: fixed;
-  width: 100%;
-  height: 2.5em;
-  line-height: 2.5em;
-  text-align: center;
-  background-color: #ff8000;
-
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-li {
-  display: inline;
-  margin-left: 0;
-  margin-right: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  padding-bottom: 0;
-  font-size: 0.8em;
-  font-weight: bold;
-  border-radius: 1.5em;
-  transition: background-color 0.25s ease;
-}
-
-li:hover {
-  background-color: #141412;
-}
-
-p {
-  margin: 3em;
-  text-align: center;
-}
-
-#title {
-  color: #141412;
-}
-
-#content {
-  width: 100%;
+header nav ul {
   float: left;
 }
 
-.top-a {
-  display: inline;
-  margin-left: 0;
-  margin-right: 0;
-  padding: 0.2em 1.6em;
-  text-decoration: none;
-  color: #ffffff;
-}
-
-.circle {
+header nav ul li {
   display: inline-block;
-  width: 6em;
-  height: 6em;
-  border-radius: 50%;
-  font-size: 1.25em;
-  color: #ffffff;
-  line-height: 6.25em;
-  text-align: center;
+  padding-left: 0.5rem;
+}
+
+header nav ul li a {
+  color: #b58900;
+  outline: none;
   text-decoration: none;
-  background: #ff8000;
-  transition: color 0.25s ease;
-  transition: background-color 0.25s ease;
-  border: 0.25em solid #ff8000;
-  margin: 0.125em;
 }
 
-.circle:hover {
-  color: #00ff00;
-  background-color: #ffffff;
+header nav ul li a:hover {
+  color: #657b84;
+  text-decoration: underline;
 }
 
-.roundrec {
-  display: inline-block;
-  width: 12.25em;
-  height: 6em;
-  border-radius: 1.5em;
-  font-size: 1.25em;
-  color: #ffffff;
-  line-height: 6.25em;
-  text-align: center;
-  text-decoration: none;
-  background: #ff8000;
-  transition: color 0.25s ease;
-  transition: background-color 0.25s ease;
-  border: 0.25em solid #ff8000;
-  margin: 0.125em;
+main {
+  width: 64rem;
 }
 
-.roundrec:hover {
-  color: #00ff00;
-  background-color: #ffffff;
+section {
+  display: block;
 }
 
-.photo {
-  border-radius: 50%;
-  width: 12em;
-  height: 12em;
+.title {
+  font-size: 1.2rem;
 }
