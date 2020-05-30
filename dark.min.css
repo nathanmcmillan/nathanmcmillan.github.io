@@ -1,0 +1,17 @@
+:root {
+  --content: 52rem;
+  --background: rgb(39, 40, 34);
+  --background-hightlight: rgb(62, 61, 50);
+  --main-font: rgb(156, 220, 254);
+  --link-font: rgb(240, 38, 110);
+  --title-font: rgb(174, 129, 225);
+  --highlight-font: rgb(166, 226, 46);
+}
+
+section a img {
+  filter: invert(0.75);
+}
+
+footer a img {
+  filter: invert(0.5) sepia(1) saturate(5) hue-rotate(180deg);
+}

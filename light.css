@@ -1,7 +1,11 @@
 :root {
   --content: 52rem;
-  --dark-font: rgb(100, 124, 132);
-  --light-font: rgb(180, 136, 0);
+  --background: rgb(254, 246, 228);
+  --background-hightlight: rgb(244, 236, 218);
+  --main-font: rgb(100, 124, 132);
+  --link-font: rgb(180, 136, 0);
+  --title-font: rgb(180, 136, 0);
+  --highlight-font: rgb(100, 124, 132);
 }
 
 * {
@@ -10,9 +14,9 @@
 }
 
 html {
-  background-color: rgb(254, 246, 228);
+  background-color: var(--background);
   font-family: sans-serif;
-  color: var(--dark-font);
+  color: var(--main-font);
 }
 
 header {
@@ -25,7 +29,7 @@ header {
 }
 
 header a {
-  color: var(--light-font);
+  color: var(--link-font);
   font-size: 1rem;
   outline: none;
   text-decoration: none;
@@ -33,7 +37,7 @@ header a {
 }
 
 header a:hover {
-  color: var(--dark-font);
+  color: var(--highlight-font);
   text-decoration: underline;
 }
 
@@ -46,6 +50,10 @@ main {
   margin: auto;
 }
 
+section {
+  margin-bottom: 1.5rem;
+}
+
 .projects section {
   display: block;
   margin-bottom: 0.5rem;
@@ -55,17 +63,31 @@ main {
 }
 
 .projects section:hover {
-  background-color: rgb(244, 236, 218);
+  background-color: var(--background-hightlight);
 }
 
 section h1 {
   display: block;
   font-size: 1.4rem;
+  color: var(--title-font);
   margin-bottom: 1rem;
 }
 
+.flex {
+  display: flex;
+}
+
+.flex-left {
+  flex: 0 0 40%;
+}
+
+.flex-right {
+  flex: 1;
+  padding-left: 1.5rem;
+}
+
 section a {
-  color: var(--light-font);
+  color: var(--link-font);
   outline: none;
   text-decoration: none;
   margin-right: 0.2rem;
@@ -85,6 +107,10 @@ section p {
   margin-bottom: 1rem;
 }
 
+section img {
+  border-radius: 4%;
+}
+
 .photos section {
   text-align: center;
 }
@@ -101,13 +127,16 @@ section p {
 hr {
   border-top: 1px solid #000000;
   opacity: 0.2;
-  margin: 1.5rem auto;
+  margin-left: auto;
+  margin-right: auto;
   width: var(--content);
 }
 
 footer {
   display: block;
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1.5rem;
   margin-bottom: 1.5rem;
   text-align: center;
   width: var(--content);
@@ -115,7 +144,7 @@ footer {
 
 footer a {
   margin: 0.2rem;
-  color: var(--dark-font);
+  color: var(--main-font);
 }
 
 footer a img {

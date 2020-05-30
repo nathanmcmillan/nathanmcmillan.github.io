@@ -1,0 +1,9 @@
+:root {
+  --content: 52rem;
+  --background: rgb(254, 246, 228);
+  --background-hightlight: rgb(244, 236, 218);
+  --main-font: rgb(100, 124, 132);
+  --link-font: rgb(180, 136, 0);
+  --title-font: rgb(180, 136, 0);
+  --highlight-font: rgb(100, 124, 132);
+}
