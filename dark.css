@@ -6,6 +6,7 @@
   --link-font: rgb(240, 38, 110);
   --title-font: rgb(174, 129, 225);
   --highlight-font: rgb(166, 226, 46);
+  --separator-color: rgb(174, 129, 225);
 }
 
 section a img {
@@ -27,13 +28,17 @@ html {
   color: var(--main-font);
 }
 
+img {
+  border-radius: 4%;
+}
+
 header {
   width: var(--content);
   margin-top: 3rem;
   margin-bottom: 2rem;
   margin-left: auto;
   margin-right: auto;
-  display: block;
+  display: flex;
 }
 
 header a {
@@ -41,7 +46,7 @@ header a {
   font-size: 1rem;
   outline: none;
   text-decoration: none;
-  padding-right: 0.9rem;
+  margin-left: 1rem;
 }
 
 header a:hover {
@@ -49,8 +54,13 @@ header a:hover {
   text-decoration: underline;
 }
 
-.title {
+.header-left {
+  flex: 1;
+}
+
+.header-left a {
   font-size: 1.5rem;
+  margin-left: 0;
 }
 
 main {
@@ -59,15 +69,22 @@ main {
 }
 
 section {
+  display: block;
+}
+
+.index {
+  margin-bottom: 1.5rem;
+}
+
+.photos {
   margin-bottom: 1.5rem;
 }
 
 .projects section {
-  display: block;
+  padding: 1rem;
   margin-bottom: 0.5rem;
   border-color: transparent;
   border-radius: 10px;
-  padding: 1rem;
 }
 
 .projects section:hover {
@@ -85,12 +102,18 @@ section h1 {
   display: flex;
 }
 
-.flex-left {
+.photo-left {
   flex: 0 0 40%;
 }
 
-.flex-right {
+.photo-left img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.photo-right {
   flex: 1;
+  padding-top: 1.5rem;
   padding-left: 1.5rem;
 }
 
@@ -105,7 +128,7 @@ section a:hover {
   text-decoration: underline;
 }
 
-section a img {
+.svg-link img {
   width: 0.9rem;
   margin-right: 0.4rem;
 }
@@ -115,29 +138,32 @@ section p {
   margin-bottom: 1rem;
 }
 
-section img {
-  border-radius: 4%;
+.flex-photos {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
 }
 
-.photos section {
-  text-align: center;
-}
-
-.photos section img {
+.flex-photos img {
   image-orientation: from-image;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 5px 0px;
+  vertical-align: middle;
+  max-width: 33%;
 }
 
-.photos section img:hover {
+.flex-photos img:hover {
   box-shadow: rgba(0, 0, 0, 0.8) 0px 2px 5px 0px;
 }
 
 hr {
-  border-top: 1px solid #000000;
-  opacity: 0.2;
+  border-left: 0;
+  border-right: 0;
+  border-top: 1px solid var(--separator-color);
+  border-bottom: 1px solid var(--separator-color);
   margin-left: auto;
   margin-right: auto;
   width: var(--content);
+  height: 1px;
 }
 
 footer {

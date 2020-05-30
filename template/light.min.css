@@ -4,6 +4,7 @@
   --background-hightlight: rgb(244, 236, 218);
   --main-font: rgb(100, 124, 132);
   --link-font: rgb(180, 136, 0);
-  --title-font: rgb(180, 136, 0);
+  --title-font: rgb(100, 124, 132);
   --highlight-font: rgb(100, 124, 132);
+  --separator-color: rgb(128, 128, 128);
 }
