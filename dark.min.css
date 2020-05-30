@@ -13,5 +13,5 @@ section a img {
 }
 
 footer a img {
-  filter: invert(0.5) sepia(1) saturate(5) hue-rotate(180deg);
+  filter: invert(0.75);
 }
