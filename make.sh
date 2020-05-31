@@ -24,3 +24,15 @@ echo "" >> light.css
 
 cat template/common.css >> dark.css
 cat template/common.css >> light.css
+
+rm resume.css
+rm resume_dark.css
+
+cp template/resume.light.min.css resume.css
+cp template/resume.dark.min.css resume_dark.css
+
+echo "" >> resume.css
+echo "" >> resume_dark.css
+
+cat template/resume.common.css >> resume.css
+cat template/resume.common.css >> resume_dark.css

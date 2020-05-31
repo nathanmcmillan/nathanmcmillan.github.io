@@ -1,0 +1,12 @@
+:root {
+  --background: rgb(39, 40, 34);
+  --top-border: rgb(100, 124, 132);
+  --paper: rgb(255, 255, 255);
+  --separator: rgb(68, 68, 68);
+  --link: rgb(229, 0, 83);
+  --font-color: rgb(68, 68, 68);
+}
+
+footer a img {
+  filter: invert(0.75);
+}
