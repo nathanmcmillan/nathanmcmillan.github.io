@@ -7,11 +7,11 @@ cp pages/*.html .
 python3 template.py *.html
 
 for f in *.html; do
-  d="$(basename $f .html).dark.html"
+  d="$(basename $f .html)_dark.html"
   cp $f $d
 done
 
-python3 dark.py *.dark.html
+python3 replace.py *_dark.html
 
 rm dark.css
 rm light.css

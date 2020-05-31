@@ -1,4 +1,5 @@
 import sys
+import os
 
 with open('template/header.html', 'r') as file:
     header = file.readlines()
@@ -16,6 +17,9 @@ def search_and_replace(path):
 
     with open(path, 'r') as file:
         content = file.readlines()
+
+    base = os.path.basename(path)
+    name = os.path.splitext(base)[0]
 
     out = []
 
@@ -35,9 +39,11 @@ def search_and_replace(path):
         else:
             out.append(line)
 
+    content = "".join(out)
+    content = content.replace('<!--this-->', name)
+
     with open(path, 'w') as file:
-        for line in out:
-            file.write(line)
+        file.write(content)
 
 
 for path in sys.argv:

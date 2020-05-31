@@ -11,9 +11,9 @@ def search_and_replace(path):
     content = content.replace('src="moon-solid.svg"', 'src="sun-solid.svg"')
 
     regex = re.compile(r'href="(.*)\.html"')
-    content = regex.sub(r'href="\g<1>.dark.html"', content)
+    content = regex.sub(r'href="\g<1>_dark.html"', content)
 
-    regex = re.compile(r'href="(.*)\.dark\.dark\.html"')
+    regex = re.compile(r'href="(.*)_dark_dark\.html"')
     content = regex.sub(r'href="\g<1>.html"', content)
 
     with open(path, 'w') as file:
