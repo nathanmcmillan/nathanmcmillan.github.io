@@ -39,6 +39,7 @@ header {
   margin-left: auto;
   margin-right: auto;
   display: flex;
+  align-items: center;
 }
 
 header a {
@@ -46,12 +47,12 @@ header a {
   font-size: 1rem;
   outline: none;
   text-decoration: none;
-  margin-left: 1rem;
+  padding: 0.5rem;
 }
 
 header a:hover {
-  color: var(--highlight-font);
-  text-decoration: underline;
+  background-color: var(--background-hightlight);
+  border-radius: 10px;
 }
 
 .header-left {
@@ -103,7 +104,7 @@ section h1 {
 }
 
 .photo-left {
-  flex: 0 0 40%;
+  flex: 0 0 30%;
 }
 
 .photo-left img {
@@ -178,7 +179,6 @@ footer {
 
 footer a {
   margin: 0.2rem;
-  color: var(--main-font);
 }
 
 footer a img {
