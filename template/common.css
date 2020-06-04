@@ -73,6 +73,17 @@ section {
   background-color: var(--background-hightlight);
 }
 
+.articles section {
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  border-color: transparent;
+  border-radius: 10px;
+}
+
+.articles section:hover {
+  background-color: var(--background-hightlight);
+}
+
 section h1 {
   display: block;
   font-size: 1.4rem;

@@ -1,38 +1,22 @@
-#!/bin/bash
+#!/bin/bash -eu
 
-rm *.html
+rm -rf docs/dark
 
-cp pages/*.html .
-
-python3 template.py *.html
-
-for f in *.html; do
-  d="$(basename $f .html)_dark.html"
-  cp $f $d
+find docs -name '*.html' -print0 | while IFS= read -r -d '' f; do
+  rm $f
 done
 
-python3 replace.py *_dark.html
+mkdir docs/dark
 
-rm dark.css
-rm light.css
+cp -r pages/* docs
+cp -r pages/* docs/dark
 
-cp template/dark.min.css dark.css
-cp template/light.min.css light.css
+find docs -name '*.html' -print0 | while IFS= read -r -d '' f; do
+  python3 template.py $f
+done
 
-echo "" >> dark.css
-echo "" >> light.css
+find docs/dark -name '*.html' -print0 | while IFS= read -r -d '' f; do
+  python3 dark.py $f
+done
 
-cat template/common.css >> dark.css
-cat template/common.css >> light.css
-
-rm resume.css
-rm resume_dark.css
-
-cp template/resume.light.min.css resume.css
-cp template/resume.dark.min.css resume_dark.css
-
-echo "" >> resume.css
-echo "" >> resume_dark.css
-
-cat template/resume.common.css >> resume.css
-cat template/resume.common.css >> resume_dark.css
+./css-make.sh

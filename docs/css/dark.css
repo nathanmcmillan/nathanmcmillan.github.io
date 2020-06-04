@@ -1,12 +1,20 @@
 :root {
   --content: 52rem;
-  --background: rgb(254, 246, 228);
-  --background-hightlight: rgb(244, 236, 218);
-  --main-font: rgb(100, 124, 132);
-  --link-font: rgb(180, 136, 0);
-  --title-font: rgb(100, 124, 132);
-  --highlight-font: rgb(100, 124, 132);
-  --separator-color: rgb(128, 128, 128);
+  --background: rgb(39, 40, 34);
+  --background-hightlight: rgb(62, 61, 50);
+  --main-font: rgb(156, 220, 254);
+  --link-font: rgb(240, 38, 110);
+  --title-font: rgb(174, 129, 225);
+  --highlight-font: rgb(166, 226, 46);
+  --separator-color: rgb(174, 129, 225);
+}
+
+section a img {
+  filter: invert(0.75);
+}
+
+footer a img {
+  filter: invert(0.75);
 }
 
 * {
@@ -81,6 +89,17 @@ section {
 }
 
 .projects section:hover {
+  background-color: var(--background-hightlight);
+}
+
+.articles section {
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  border-color: transparent;
+  border-radius: 10px;
+}
+
+.articles section:hover {
   background-color: var(--background-hightlight);
 }
 

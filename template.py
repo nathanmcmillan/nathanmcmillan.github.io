@@ -1,5 +1,7 @@
 import sys
 import os
+import code
+from pathlib import Path
 
 with open('template/header.html', 'r') as file:
     header = file.readlines()
@@ -18,8 +20,9 @@ def search_and_replace(path):
     with open(path, 'r') as file:
         content = file.readlines()
 
-    base = os.path.basename(path)
-    name = os.path.splitext(base)[0]
+    relative = Path(path).parts
+    relative = relative[1:]
+    relative = '/'.join(relative)
 
     out = []
 
@@ -36,11 +39,18 @@ def search_and_replace(path):
             for f in footer:
                 out.append(space + '  ' + f)
             out.append(space + '</footer>\n')
+        elif line.strip().startswith('<pre>'):
+            space = whitespace(line)
+            out.append(space + '<pre>\n')
+            source = line.lstrip(' ').lstrip('<pre>').rstrip('</pre>\n')
+            print('FILE ---> ' + source)
+            out.append(code.compiler(source))
+            out.append(space + '</pre>\n')
         else:
             out.append(line)
 
     content = "".join(out)
-    content = content.replace('<!--this-->', name)
+    content = content.replace('<!--this-->', relative)
 
     with open(path, 'w') as file:
         file.write(content)
