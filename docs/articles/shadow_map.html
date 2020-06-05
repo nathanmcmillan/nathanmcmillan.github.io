@@ -4,6 +4,7 @@
     <title>Shadow Map Frustum • Nathan McMillan</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="/css/light.css" />
+    <link rel="stylesheet" type="text/css" href="/css/code.css" />
   </head>
   <body>
     <header>
@@ -15,115 +16,113 @@
         <a href="/resume.html">resume</a>
       </div>
     </header>
-    <main class="articles">
+    <main>
       <section>
         <h1>How to calculate directional light frustum from the camera</h1>
         <div>04 June 2020</div>
-        <pre><code>
-void matrix_frustum_corners(vec4 *corners, float *matrix) {
+        <pre><code><<v>t</v>><v>void</v></<v>t</v>> <v>matrix_frustum_corners</v>(<v>vec<n>4</n></v> *<v>corners</v>, <<v>t</v>><v>float</v></<v>t</v>> *<v>matrix</v>) {
 
-    corners[0] = (vec4){-1, -1, -1, 1};
-    corners[1] = (vec4){1, -1, -1, 1};
-    corners[2] = (vec4){-1, 1, -1, 1};
-    corners[3] = (vec4){1, 1, -1, 1};
-    corners[4] = (vec4){-1, -1, 1, 1};
-    corners[5] = (vec4){1, -1, 1, 1};
-    corners[6] = (vec4){-1, 1, 1, 1};
-    corners[7] = (vec4){1, 1, 1, 1};
+    <v>corners</v>[<v><n>0</n></v>] = (<v>vec<n>4</n></v>){-<v><n>1</n></v>, -<v><n>1</n></v>, -<v><n>1</n></v>, <v><n>1</n></v>};
+    <v>corners</v>[<v><n>1</n></v>] = (<v>vec<n>4</n></v>){<v><n>1</n></v>, -<v><n>1</n></v>, -<v><n>1</n></v>, <v><n>1</n></v>};
+    <v>corners</v>[<v><n>2</n></v>] = (<v>vec<n>4</n></v>){-<v><n>1</n></v>, <v><n>1</n></v>, -<v><n>1</n></v>, <v><n>1</n></v>};
+    <v>corners</v>[<v><n>3</n></v>] = (<v>vec<n>4</n></v>){<v><n>1</n></v>, <v><n>1</n></v>, -<v><n>1</n></v>, <v><n>1</n></v>};
+    <v>corners</v>[<v><n>4</n></v>] = (<v>vec<n>4</n></v>){-<v><n>1</n></v>, -<v><n>1</n></v>, <v><n>1</n></v>, <v><n>1</n></v>};
+    <v>corners</v>[<v><n>5</n></v>] = (<v>vec<n>4</n></v>){<v><n>1</n></v>, -<v><n>1</n></v>, <v><n>1</n></v>, <v><n>1</n></v>};
+    <v>corners</v>[<v><n>6</n></v>] = (<v>vec<n>4</n></v>){-<v><n>1</n></v>, <v><n>1</n></v>, <v><n>1</n></v>, <v><n>1</n></v>};
+    <v>corners</v>[<v><n>7</n></v>] = (<v>vec<n>4</n></v>){<v><n>1</n></v>, <v><n>1</n></v>, <v><n>1</n></v>, <v><n>1</n></v>};
 
-    vec4 transform;
-    for (int i = 0; i < 8; i++) {
-        matrix_multiply_vector4(&transform, matrix, &corners[i]);
-        corners[i].x = transform.x / transform.w;
-        corners[i].y = transform.y / transform.w;
-        corners[i].z = transform.z / transform.w;
-        corners[i].w = 1;
+    <v>vec<n>4</n></v> <v>transform</v>;
+    <v>for</v> (<<v>t</v>><v>int</v></<v>t</v>> <v>i</v> = <v><n>0</n></v>; <v>i</v> < <v><n>8</n></v>; <v>i</v>++) {
+        <v>matrix_multiply_vector<n>4</n></v>(&<v>transform</v>, <v>matrix</v>, &<v>corners</v>[<v>i</v>]);
+        <v>corners</v>[<v>i</v>].<v>x</v> = <v>transform</v>.<v>x</v> / <v>transform</v>.<v>w</v>;
+        <v>corners</v>[<v>i</v>].<v>y</v> = <v>transform</v>.<v>y</v> / <v>transform</v>.<v>w</v>;
+        <v>corners</v>[<v>i</v>].<v>z</v> = <v>transform</v>.<v>z</v> / <v>transform</v>.<v>w</v>;
+        <v>corners</v>[<v>i</v>].<v>w</v> = <v><n>1</n></v>;
     }
 }
-        </code></pre>
+</code></pre>
         <p>Blah</p>
-        <pre><code>
-void shadow_map_view_projection(shadowmap *shadow, float *out, float *shadow_view, float *view_projection) {
+        <pre><code><<v>t</v>><v>void</v></<v>t</v>> <v>shadow_map_view_projection</v>(<v>shadowmap</v> *<v>shadow</v>, <<v>t</v>><v>float</v></<v>t</v>> *<v>out</v>, <<v>t</v>><v>float</v></<v>t</v>> *<v>shadow_view</v>, <<v>t</v>><v>float</v></<v>t</v>> *<v>view_projection</v>) {
 
-    vec3 shadow_direction = (vec3){-shadow_view[2], -shadow_view[6], -shadow_view[10]};
-    vector3_normalize(&shadow_direction);
+    <v>vec<n>3</n></v> <v>shadow_direction</v> = (<v>vec<n>3</n></v>){-<v>shadow_view</v>[<v><n>2</n></v>], -<v>shadow_view</v>[<v><n>6</n></v>], -<v>shadow_view</v>[<v><n>10</n></v>]};
+    <v>vector<n>3</n>_normalize</v>(&<v>shadow_direction</v>);
 
-    float inverse_view_projection[16];
-    matrix_inverse(inverse_view_projection, view_projection);
+    <<v>t</v>><v>float</v></<v>t</v>> <v>inverse_view_projection</v>[<v><n>16</n></v>];
+    <v>matrix_inverse</v>(<v>inverse_view_projection</v>, <v>view_projection</v>);
 
-    vec4 corners[8];
-    matrix_frustum_corners(corners, inverse_view_projection);
+    <v>vec<n>4</n></v> <v>corners</v>[<v><n>8</n></v>];
+    <v>matrix_frustum_corners</v>(<v>corners</v>, <v>inverse_view_projection</v>);
 
-    float min_z = FLT_MAX;
-    float max_z = FLT_MIN;
+    <<v>t</v>><v>float</v></<v>t</v>> <v>min_z</v> = <v>FLT_MAX</v>;
+    <<v>t</v>><v>float</v></<v>t</v>> <v>max_z</v> = <v>FLT_MIN</v>;
 
-    for (int i = 0; i < 8; i++) {
-        float z = corners[i].z;
-        min_z = fmin(min_z, z);
-        max_z = fmax(max_z, z);
+    <v>for</v> (<<v>t</v>><v>int</v></<v>t</v>> <v>i</v> = <v><n>0</n></v>; <v>i</v> < <v><n>8</n></v>; <v>i</v>++) {
+        <<v>t</v>><v>float</v></<v>t</v>> <v>z</v> = <v>corners</v>[<v>i</v>].<v>z</v>;
+        <v>min_z</v> = <v>fmin</v>(<v>min_z</v>, <v>z</v>);
+        <v>max_z</v> = <v>fmax</v>(<v>max_z</v>, <v>z</v>);
     }
 
-    float z_distance = max_z - min_z;
+    <<v>t</v>><v>float</v></<v>t</v>> <v>z_distance</v> = <v>max_z</v> - <v>min_z</v>;
 
-    vec3 center = {0};
-    for (int i = 0; i < 8; i++) {
-        vec4 *corner = &corners[i];
-        center.x += corner->x;
-        center.y += corner->y;
-        center.z += corner->z;
+    <v>vec<n>3</n></v> <v>center</v> = {<v><n>0</n></v>};
+    <v>for</v> (<<v>t</v>><v>int</v></<v>t</v>> <v>i</v> = <v><n>0</n></v>; <v>i</v> < <v><n>8</n></v>; <v>i</v>++) {
+        <v>vec<n>4</n></v> *<v>corner</v> = &<v>corners</v>[<v>i</v>];
+        <v>center</v>.<v>x</v> += <v>corner</v>-><v>x</v>;
+        <v>center</v>.<v>y</v> += <v>corner</v>-><v>y</v>;
+        <v>center</v>.<v>z</v> += <v>corner</v>-><v>z</v>;
     }
 
-    VECTOR_3_DIVIDE(center, 8);
+    <v>VECTOR_<n>3</n>_DIVIDE</v>(<v>center</v>, <v><n>8</n></v>);
 
-    float x = center.x - shadow_direction.x * z_distance;
-    float y = center.y - shadow_direction.y * z_distance;
-    float z = center.z - shadow_direction.z * z_distance;
+    <<v>t</v>><v>float</v></<v>t</v>> <v>x</v> = <v>center</v>.<v>x</v> - <v>shadow_direction</v>.<v>x</v> * <v>z_distance</v>;
+    <<v>t</v>><v>float</v></<v>t</v>> <v>y</v> = <v>center</v>.<v>y</v> - <v>shadow_direction</v>.<v>y</v> * <v>z_distance</v>;
+    <<v>t</v>><v>float</v></<v>t</v>> <v>z</v> = <v>center</v>.<v>z</v> - <v>shadow_direction</v>.<v>z</v> * <v>z_distance</v>;
 
-    float world_units_per_texel = 1.0f / shadow->size;
+    <<v>t</v>><v>float</v></<v>t</v>> <v>world_units_per_texel</v> = <v><n>1</n></v>.<v><n>0</n>f</v> / <v>shadow</v>-><v>size</v>;
 
-    x = floorf(x / world_units_per_texel) * world_units_per_texel;
-    y = floorf(y / world_units_per_texel) * world_units_per_texel;
-    z = floorf(z / world_units_per_texel) * world_units_per_texel;
+    <v>x</v> = <v>floorf</v>(<v>x</v> / <v>world_units_per_texel</v>) * <v>world_units_per_texel</v>;
+    <v>y</v> = <v>floorf</v>(<v>y</v> / <v>world_units_per_texel</v>) * <v>world_units_per_texel</v>;
+    <v>z</v> = <v>floorf</v>(<v>z</v> / <v>world_units_per_texel</v>) * <v>world_units_per_texel</v>;
 
-    matrix_translate(shadow_view, -x, -y, -z);
+    <v>matrix_translate</v>(<v>shadow_view</v>, -<v>x</v>, -<v>y</v>, -<v>z</v>);
 
-    float shadow_projection[16];
+    <<v>t</v>><v>float</v></<v>t</v>> <v>shadow_projection</v>[<v><n>16</n></v>];
 
-    float min_x = FLT_MAX;
-    float max_x = FLT_MIN;
-    float min_y = FLT_MAX;
-    float max_y = FLT_MIN;
+    <<v>t</v>><v>float</v></<v>t</v>> <v>min_x</v> = <v>FLT_MAX</v>;
+    <<v>t</v>><v>float</v></<v>t</v>> <v>max_x</v> = <v>FLT_MIN</v>;
+    <<v>t</v>><v>float</v></<v>t</v>> <v>min_y</v> = <v>FLT_MAX</v>;
+    <<v>t</v>><v>float</v></<v>t</v>> <v>max_y</v> = <v>FLT_MIN</v>;
 
-    min_z = FLT_MAX;
-    max_z = FLT_MIN;
+    <v>min_z</v> = <v>FLT_MAX</v>;
+    <v>max_z</v> = <v>FLT_MIN</v>;
 
-    for (int i = 0; i < 8; i++) {
-        vec4 corner;
-        matrix_multiply_vector4(&corner, shadow_view, &corners[i]);
+    <v>for</v> (<<v>t</v>><v>int</v></<v>t</v>> <v>i</v> = <v><n>0</n></v>; <v>i</v> < <v><n>8</n></v>; <v>i</v>++) {
+        <v>vec<n>4</n></v> <v>corner</v>;
+        <v>matrix_multiply_vector<n>4</n></v>(&<v>corner</v>, <v>shadow_view</v>, &<v>corners</v>[<v>i</v>]);
 
-        min_x = fmin(min_x, corner.x);
-        max_x = fmax(max_x, corner.x);
+        <v>min_x</v> = <v>fmin</v>(<v>min_x</v>, <v>corner</v>.<v>x</v>);
+        <v>max_x</v> = <v>fmax</v>(<v>max_x</v>, <v>corner</v>.<v>x</v>);
 
-        min_y = fmin(min_y, corner.y);
-        max_y = fmax(max_y, corner.y);
+        <v>min_y</v> = <v>fmin</v>(<v>min_y</v>, <v>corner</v>.<v>y</v>);
+        <v>max_y</v> = <v>fmax</v>(<v>max_y</v>, <v>corner</v>.<v>y</v>);
 
-        min_z = fmin(min_z, corner.z);
-        max_z = fmax(max_z, corner.z);
+        <v>min_z</v> = <v>fmin</v>(<v>min_z</v>, <v>corner</v>.<v>z</v>);
+        <v>max_z</v> = <v>fmax</v>(<v>max_z</v>, <v>corner</v>.<v>z</v>);
     }
 
-    z_distance = max_z - min_z;
+    <v>z_distance</v> = <v>max_z</v> - <v>min_z</v>;
 
-    min_x = floorf(min_x / world_units_per_texel) * world_units_per_texel;
-    max_x = floorf(max_x / world_units_per_texel) * world_units_per_texel;
+    <v>min_x</v> = <v>floorf</v>(<v>min_x</v> / <v>world_units_per_texel</v>) * <v>world_units_per_texel</v>;
+    <v>max_x</v> = <v>floorf</v>(<v>max_x</v> / <v>world_units_per_texel</v>) * <v>world_units_per_texel</v>;
 
-    min_y = floorf(min_y / world_units_per_texel) * world_units_per_texel;
-    max_y = floorf(max_y / world_units_per_texel) * world_units_per_texel;
+    <v>min_y</v> = <v>floorf</v>(<v>min_y</v> / <v>world_units_per_texel</v>) * <v>world_units_per_texel</v>;
+    <v>max_y</v> = <v>floorf</v>(<v>max_y</v> / <v>world_units_per_texel</v>) * <v>world_units_per_texel</v>;
 
-    matrix_orthographic(shadow_projection, min_x, max_x, min_y, max_y, 0.001, z_distance);
+    <v>matrix_orthographic</v>(<v>shadow_projection</v>, <v>min_x</v>, <v>max_x</v>, <v>min_y</v>, <v>max_y</v>, <v><n>0</n></v>.<v><n>001</n></v>, <v>z_distance</v>);
 
-    matrix_multiply(out, shadow_projection, shadow_view);
+    <v>matrix_multiply</v>(<v>out</v>, <v>shadow_projection</v>, <v>shadow_view</v>);
 }
-        </code></pre>
+</code></pre>
       </section>
       <div class="share">
         <a class="svg-link" href="http://news.ycombinator.com/submitlink?u=articles/shadow_map.html"><img src="/svg/hacker-news-square-brands.svg" /></a>

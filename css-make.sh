@@ -23,3 +23,5 @@ echo "" >> $css/resume_dark.css
 
 cat template/resume.common.css >> $css/resume.css
 cat template/resume.common.css >> $css/resume_dark.css
+
+cp template/code.css $css/code.css

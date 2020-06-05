@@ -195,3 +195,19 @@ footer a {
 footer a img {
   width: 0.9rem;
 }
+
+pre {
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  border-color: transparent;
+  border-radius: 10px;
+  white-space: pre-wrap;
+}
+
+pre {
+  background-color: var(--background-hightlight);
+}
+
+code {
+  font-size: 0.9rem;
+}
