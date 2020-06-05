@@ -41,11 +41,10 @@ def search_and_replace(path):
             out.append(space + '</footer>\n')
         elif line.strip().startswith('<pre>'):
             space = whitespace(line)
-            out.append(space + '<pre>\n')
+            out.append(space + '<pre><code>\n')
             source = line.lstrip(' ').lstrip('<pre>').rstrip('</pre>\n')
-            print('FILE ---> ' + source)
-            out.append(code.compiler(source))
-            out.append(space + '</pre>\n')
+            out.append(code.highlight(source))
+            out.append(space + '</code></pre>\n')
         else:
             out.append(line)
 
