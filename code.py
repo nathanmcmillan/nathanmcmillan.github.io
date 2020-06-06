@@ -24,11 +24,26 @@ def c_syntax(source):
             s = d[e]
             rules.append(Rule(e, s))
     out = []
+    # TODO
+    # Iterate through list of rules until a match is found, them substring line and repeat
+    # Do not end line until no matches are found on the remainder
+
+    # TODO
+    # Escape lines to html before processing
+    # Also transform regex to HTML first
+
     for line in source:
-        for rule in rules:
-            line = rule.sub(line)
+        end = ''
+        while True:
+            for rule in rules:
+                line = rule.sub(line)
+                match = 2
+                line = line[2:]
+                continue
+            break
         # line = html.escape(line)
-        out.append(line)
+        end += liine
+        out.append(end)
     return ''.join(out)
 
 
