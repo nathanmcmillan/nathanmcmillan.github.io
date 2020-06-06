@@ -1,5 +1,17 @@
 {
-  "(void|int|float)": "<t>\\g<0></t>",
-  "\\w+": "<v>\\g<0></v>",
-  "(\\+|-)?\\d+": "<n>\\g<0></n>"
+  "syntax": [
+    ["//.*$", ["comment"]],
+    ["(?:1 2 3 )(#include) (.*) 4 5 6$", [null, "include", "include_name"]],
+    ["(#(?:ifdef|ifndef|define|endif))(?:$|( .*$))", [null, "macro", "macro_name"]],
+    ["\\b(size_t|char|int|float|void)\\b", [null, "type"]],
+    ["\\b(exit|malloc|realloc|printf|fprintf|floorf|ceilf|sinf|cosf|fmin|fmax|sizeof)\\b", [null, "call"]],
+    ["\\b(main)\\b", [null, "function"]],
+    ["\\b(NULL)\\b", [null, "null"]],
+    ["\\b(if|else|for|while|return|break|continue|goto)\\b", [null, "control"]],
+    ["\\b(struct)\\b", [null, "struct"]],
+    ["\\b({%.*?})\\b", [null, "this"]],
+    ["\\b(?:\\+|-)?\\d+(?:\\.\\d+)?f?\\b", ["number"]],
+    ["(&)\\w+", [null, "pointer"]],
+    ["\".*?\"", ["string"]]
+  ]
 }
