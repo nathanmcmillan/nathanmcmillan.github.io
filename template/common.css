@@ -1,3 +1,7 @@
+:root {
+  --content: 52rem;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -24,6 +28,7 @@ header {
 }
 
 header a {
+  display: inline-flex;
   color: var(--link-font);
   font-size: 1rem;
   outline: none;
@@ -61,6 +66,13 @@ section {
 
 .photos {
   margin-bottom: 1.5rem;
+}
+
+.photos section {
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  border-color: transparent;
+  border-radius: 10px;
 }
 
 .projects section {
@@ -132,21 +144,20 @@ section p {
   margin-bottom: 1rem;
 }
 
-.flex-photos {
+.photo-container {
   display: flex;
-  flex-wrap: wrap;
-  align-content: flex-start;
+  justify-content: center;
 }
 
-.flex-photos img {
+.photo-col {
+  flex: 1;
+  padding: 0.5rem;
+}
+
+.photo-col img {
   image-orientation: from-image;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 5px 0px;
-  vertical-align: middle;
-  max-width: 33%;
-}
-
-.flex-photos img:hover {
-  box-shadow: rgba(0, 0, 0, 0.8) 0px 2px 5px 0px;
+  width: 100%;
+  margin-bottom: 1rem;
 }
 
 hr {
@@ -221,4 +232,46 @@ code {
 
 .top {
   margin-bottom: 0.5rem;
+}
+
+@media (max-width: 800px) {
+  :root {
+    --content: 90%;
+  }
+
+  header {
+    flex-wrap: wrap;
+  }
+
+  .header-left {
+    white-space: nowrap;
+  }
+
+  section a {
+    margin-right: 1rem;
+  }
+
+  .project-details {
+    display: block;
+  }
+
+  .project-details-text {
+    display: block;
+    flex: none;
+  }
+
+  .project-details-img {
+    display: block;
+    flex: none;
+    margin-top: 1rem;
+  }
+
+  footer a {
+    display: inline-block;
+    width: 20%;
+  }
+
+  footer a img {
+    width: 2rem;
+  }
 }

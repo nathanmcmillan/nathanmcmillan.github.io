@@ -1,5 +1,4 @@
 :root {
-  --content: 52rem;
   --background: rgb(254, 246, 228);
   --background-hightlight: rgb(244, 236, 218);
   --main-font: rgb(100, 124, 132);
@@ -7,4 +6,8 @@
   --title-font: rgb(100, 124, 132);
   --highlight-font: rgb(100, 124, 132);
   --separator-color: rgb(128, 128, 128);
+}
+
+.photo-col img {
+  box-shadow: rgb(204, 204, 204) 0 0 10px 0;
 }
