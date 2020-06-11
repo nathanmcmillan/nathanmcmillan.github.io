@@ -20,10 +20,6 @@ def search_and_replace(path):
     with open(path, 'r') as file:
         content = file.readlines()
 
-    relative = Path(path).parts
-    relative = relative[1:]
-    relative = '/'.join(relative)
-
     out = []
 
     for line in content:
@@ -48,7 +44,7 @@ def search_and_replace(path):
             out.append(line)
 
     content = "".join(out)
-    content = content.replace('<!--this-->', relative)
+    content = content.replace('<!--this-->', path)
 
     with open(path, 'w') as file:
         file.write(content)

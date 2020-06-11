@@ -1,21 +1,27 @@
 #!/bin/bash -eu
 
-rm -rf docs/dark
+rm -f *.html
 
-find docs -name '*.html' -print0 | while IFS= read -r -d '' f; do
-  rm $f
-done
+rm -rf dark
+rm -rf articles
 
-mkdir docs/dark
+mkdir dark
 
-cp -r pages/* docs
-cp -r pages/* docs/dark
+cp -r html/* .
+cp -r html/* dark
 
-find docs -name '*.html' -print0 | while IFS= read -r -d '' f; do
-  python3 template.py $f
-done
+python3 template.py *.html
 
-find docs/dark -name '*.html' -print0 | while IFS= read -r -d '' f; do
+function template {
+  find "$1" -name '*.html' -print0 | while IFS= read -r -d '' f; do
+    python3 template.py $f
+  done
+}
+
+template articles
+template dark
+
+find dark -name '*.html' -print0 | while IFS= read -r -d '' f; do
   python3 dark.py $f
 done
 

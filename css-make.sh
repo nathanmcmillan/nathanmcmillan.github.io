@@ -1,6 +1,6 @@
 #!/bin/bash -eu
 
-css='docs/css'
+css='css'
 
 rm -rf $css
 
