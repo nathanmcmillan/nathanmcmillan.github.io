@@ -114,13 +114,13 @@ section {
   width: 100%;
 }
 
-.skills div span {
-  display: inline-block;
-  padding: 0.1rem 0.5rem;
-}
-
 .skills div span:hover {
   text-decoration: underline;
+}
+
+.important {
+  display: inline;
+  color: var(--link);
 }
 
 .small-hr {
