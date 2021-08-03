@@ -7,7 +7,7 @@ css = '/css/'
 
 
 def search_and_replace(path):
-    with open(path, 'r') as file:
+    with open(path, 'r', encoding='utf8') as file:
         content = file.read()
 
     content = content.replace('href="'+css+'light.css"', 'href="'+css+'dark.css"')
@@ -20,7 +20,7 @@ def search_and_replace(path):
     regex = re.compile(r'href="/dark/dark/dark([^"]*?)\.html"')
     content = regex.sub(r'href="\g<1>.html"', content)
 
-    with open(path, 'w') as file:
+    with open(path, 'w', encoding='utf8') as file:
         file.write(content)
 
 

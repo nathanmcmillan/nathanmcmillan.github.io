@@ -2,9 +2,9 @@
   --background: rgb(255, 255, 255);
   --main-font: rgb(0, 0, 0);
   --link-font: rgb(255, 0, 77);
-  --title-font: rgb(100, 124, 132);
+  --title-font: rgb(0, 0, 0);
   --separator-color: rgb(128, 128, 128);
-  --code: rgb(250,248,245);
+  --code: rgb(250, 248, 245);
 }
 
 .photo-col img {

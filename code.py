@@ -39,7 +39,7 @@ class Rule:
 
 def syntax(syntax_file, source):
     rules = []
-    with open(syntax_file, 'r') as f:
+    with open(syntax_file, 'r', encoding='utf8') as f:
         d = json.load(f)
         d = d["syntax"]
         for e in d:
@@ -73,7 +73,7 @@ def syntax(syntax_file, source):
 
 
 def highlight(name):
-    with open(directory + name, 'r') as file:
+    with open(directory + name, 'r', encoding='utf8') as file:
         source = file.readlines()
     base = os.path.basename(name)
     ext = os.path.splitext(base)[1]

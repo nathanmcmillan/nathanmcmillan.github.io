@@ -28,7 +28,7 @@ a:hover {
 
 header {
   max-width: var(--content);
-  margin-top: 3rem;
+  margin-top: 2rem;
   margin-bottom: 2rem;
   margin-left: auto;
   margin-right: auto;
@@ -72,6 +72,18 @@ section {
   margin-bottom: 2rem;
 }
 
+.not-found {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  line-height: 2.3rem;
+}
+
+.not-found section p {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
 .photos {
   margin-bottom: 1.5rem;
 }
@@ -81,6 +93,15 @@ section {
   margin-bottom: 0.5rem;
   border-color: transparent;
   border-radius: 10px;
+}
+
+.photos section h1 {
+  text-align: center;
+}
+
+.photos section p {
+  font-size: 1.5rem;
+  text-align: center;
 }
 
 .projects section {
@@ -210,7 +231,6 @@ code {
 }
 
 .date {
-  font-weight: bold;
   font-size: 0.8rem;
   margin-bottom: 1rem;
 }

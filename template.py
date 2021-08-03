@@ -5,10 +5,10 @@ import os
 import code
 from pathlib import Path
 
-with open('template/header.html', 'r') as file:
+with open('template/header.html', 'r', encoding='utf8') as file:
     header = file.readlines()
 
-with open('template/footer.html', 'r') as file:
+with open('template/footer.html', 'r', encoding='utf8') as file:
     footer = file.readlines()
 
 
@@ -19,7 +19,7 @@ def whitespace(a):
 
 def search_and_replace(path):
 
-    with open(path, 'r') as file:
+    with open(path, 'r', encoding='utf8') as file:
         content = file.readlines()
 
     out = []
@@ -48,7 +48,7 @@ def search_and_replace(path):
     content = "".join(out)
     content = content.replace('<!--this-->', path)
 
-    with open(path, 'w') as file:
+    with open(path, 'w', encoding='utf8') as file:
         file.write(content)
 
 
