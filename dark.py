@@ -1,8 +1,9 @@
+#!/usr/bin/env python
+
 import sys
 import re
 
 css = '/css/'
-svg = '/svg/'
 
 
 def search_and_replace(path):
@@ -12,7 +13,6 @@ def search_and_replace(path):
     content = content.replace('href="'+css+'light.css"', 'href="'+css+'dark.css"')
     content = content.replace('href="'+css+'resume.css"', 'href="'+css+'resume_dark.css"')
     content = content.replace('title="dark color scheme"', 'title="light color scheme"')
-    content = content.replace('src="/svg/'+svg+'moon-solid.svg"', 'src="'+svg+'sun-solid.svg"')
 
     regex = re.compile(r'href="([^"]*?)\.html"')
     content = regex.sub(r'href="/dark\g<1>.html"', content)

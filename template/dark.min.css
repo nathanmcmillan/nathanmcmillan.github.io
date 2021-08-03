@@ -1,11 +1,10 @@
 :root {
   --background: rgb(39, 40, 34);
-  --background-hightlight: rgb(62, 61, 50);
   --main-font: rgb(156, 220, 254);
-  --link-font: rgb(240, 38, 110);
+  --link-font: rgb(255, 0, 77);
   --title-font: rgb(174, 129, 225);
-  --highlight-font: rgb(166, 226, 46);
   --separator-color: rgb(174, 129, 225);
+  --code: rgb(250,248,245);
 }
 
 section a img {

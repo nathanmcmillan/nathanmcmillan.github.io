@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Shadow Map Frustum • Nathan McMillan</title>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" type="text/css" href="/css/light.css" />
-    <link rel="stylesheet" type="text/css" href="/css/code.css" />
-  </head>
-  <body>
-    <header>
-      <div class="header-left"><a href="/index.html">nathan mcmillan</a></div>
-      <div>
-        <a href="/articles.html">articles</a>
-        <a href="/projects.html">projects</a>
-        <a href="/music.html">music</a>
-        <a href="/photos.html">photos</a>
-        <a href="/resume.html">resume</a>
-      </div>
-    </header>
-    <main>
-      <section>
-        <h1>Calculating Shadow Map Directional Light Frustum From Camera</h1>
-        <div>04 June 2020</div>
-        <pre><code><type>void</type> matrix_frustum_corners(vec4 *corners, <type>float</type> *matrix) {
+
+<head>
+  <title>Shadow Map Frustum / Nathan McMillan</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" type="text/css" href="/css/light.css" />
+  <link rel="stylesheet" type="text/css" href="/css/code.css" />
+</head>
+
+<body>
+  <header>
+    <div class="header-left"><a href="/index.html">Nathan McMillan</a></div>
+    <div>
+      <a href="/articles.html">Articles</a>
+      <a href="/projects.html">Projects</a>
+      <a href="/music.html">Music</a>
+      <a href="/photos.html">Photos</a>
+      <a href="/resume.html">Resume</a>
+    </div>
+  </header>
+  <main>
+    <section>
+      <h1>Calculating Shadow Map Directional Light Frustum From Camera</h1>
+      <div>04 June 2020</div>
+      <pre><code><type>void</type> matrix_frustum_corners(vec4 *corners, <type>float</type> *matrix) {
 
     corners[<number>0</number>] = (vec4){-<number>1</number>, -<number>1</number>, -<number>1</number>, <number>1</number>};
     corners[<number>1</number>] = (vec4){<number>1</number>, -<number>1</number>, -<number>1</number>, <number>1</number>};
@@ -42,8 +44,8 @@
     }
 }
 </code></pre>
-        <p>Blah</p>
-        <pre><code><type>void</type> shadow_map_view_projection(shadowmap *shadow, <type>float</type> *out, <type>float</type> *shadow_view, <type>float</type> *view_projection) {
+      <p>Blah</p>
+      <pre><code><type>void</type> shadow_map_view_projection(shadowmap *shadow, <type>float</type> *out, <type>float</type> *shadow_view, <type>float</type> *view_projection) {
 
     vec3 shadow_direction = (vec3){-shadow_view[<number>2</number>], -shadow_view[<number>6</number>], -shadow_view[<number>10</number>]};
     vector3_normalize(<pointer>&amp;</pointer>shadow_direction);
@@ -124,17 +126,21 @@
     matrix_multiply(out, shadow_projection, shadow_view);
 }
 </code></pre>
-      </section>
-      <div class="share">
-        <a class="svg-link" href="http://news.ycombinator.com/submitlink?u=articles/shadow_map.html"><img src="/svg/hacker-news-square-brands.svg" /></a>
-        <a class="svg-link" href="https://www.reddit.com/submit?title=articles/shadow_map.html"><img src="/svg/reddit-brands.svg" /></a>
-      </div>
-    </main>
-    <hr />
-    <footer>
-      <a href="https://github.com/nathanmcmillan" title="visit my github"> <img src="/svg/github-brands.svg" /></a>
-      <a href="mailto:natemmcm@gmail.com" title="send me an email"> <img src="/svg/envelope-solid.svg" /></a>
-      <a href="/dark/articles/shadow_map.html" title="dark color scheme"> <img src="/svg/moon-solid.svg" /></a>
-    </footer>
-  </body>
+    </section>
+    <div class="share">
+      <a href="https://www.reddit.com/submit?title=articles/shadow_map.html">Reddit</a>
+      -
+      <a href="http://news.ycombinator.com/submitlink?u=articles/shadow_map.html">Hacker News</a>
+    </div>
+  </main>
+  <hr />
+  <footer>
+    <a href="https://github.com/nathanmcmillan">GitHub</a>
+    -
+    <a href="mailto:natemmcm@gmail.com">Email</a>
+    -
+    <a href="/dark/articles/shadow_map.html">Dark Theme</a>
+  </footer>
+</body>
+
 </html>
