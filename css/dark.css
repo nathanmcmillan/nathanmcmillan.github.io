@@ -4,7 +4,8 @@
   --link-font: rgb(255, 0, 77);
   --title-font: rgb(174, 129, 225);
   --separator-color: rgb(174, 129, 225);
-  --code: rgb(250,248,245);
+  --code: rgb(250, 248, 245);
+  --date: rgb(174, 129, 225);
 }
 
 section a img {
@@ -124,15 +125,6 @@ section {
 .projects section {
   padding: 1rem;
   margin-bottom: 0.5rem;
-  border-color: transparent;
-  border-radius: 10px;
-}
-
-.articles section {
-  padding: 1rem;
-  margin-bottom: 0.5rem;
-  border-color: transparent;
-  border-radius: 10px;
 }
 
 section h1 {
@@ -228,27 +220,18 @@ code {
   font-size: 0.9rem;
 }
 
-.project-details {
+.project-title {
   display: flex;
   align-items: center;
 }
 
-.project-details-text {
-  flex: 0 0 80%;
-}
-
-.project-details-img {
+.project-title h1 {
   flex: 1;
-}
-
-.project-details-img img {
-  border: none;
-  max-width: 100%;
-  max-height: 100%;
 }
 
 .date {
   font-size: 0.8rem;
+  color: var(--date);
   margin-bottom: 1rem;
 }
 
@@ -271,21 +254,6 @@ code {
 
   section a {
     margin-right: 1rem;
-  }
-
-  .project-details {
-    display: block;
-  }
-
-  .project-details-text {
-    display: block;
-    flex: none;
-  }
-
-  .project-details-img {
-    display: block;
-    flex: none;
-    margin-top: 1rem;
   }
 
   footer a {

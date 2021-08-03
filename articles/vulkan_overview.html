@@ -1,33 +1,32 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Vulkan Overview / Nathan McMillan</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="/css/light.css" />
+    <link rel="stylesheet" type="text/css" href="/css/code.css" />
+  </head>
 
-<head>
-  <title>Vulkan Overview / Nathan McMillan</title>
-  <meta charset="utf-8" />
-  <link rel="stylesheet" type="text/css" href="/css/light.css" />
-  <link rel="stylesheet" type="text/css" href="/css/code.css" />
-</head>
-
-<body>
-  <header>
-    <div class="header-left"><a href="/index.html">Nathan McMillan</a></div>
-    <div>
-      <a href="/articles.html">Articles</a>
-      ·
-      <a href="/projects.html">Projects</a>
-      ·
-      <a href="/music.html">Music</a>
-      ·
-      <a href="/photos.html">Photos</a>
-      ·
-      <a href="/resume.html">Resume</a>
-    </div>
-  </header>
-  <main>
-    <section>
-      <h1>Vulkan Rendering High-Level Overview</h1>
-      <div>04 June 2020</div>
-      <pre><code><struct>struct</struct> vulkan_pipeline {
+  <body>
+    <header>
+      <div class="header-left"><a href="/index.html">Nathan McMillan</a></div>
+      <div>
+        <a href="/articles.html">Articles</a>
+        ·
+        <a href="/projects.html">Projects</a>
+        ·
+        <a href="/music.html">Music</a>
+        ·
+        <a href="/photos.html">Photos</a>
+        ·
+        <a href="/resume.html">Resume</a>
+      </div>
+    </header>
+    <main>
+      <section>
+        <h1>Vulkan Rendering High-Level Overview</h1>
+        <div>04 June 2020</div>
+        <pre><code><struct>struct</struct> vulkan_pipeline {
     uint32_t swapchain_image_count;
     <struct>struct</struct> vulkan_renderbuffer *renderbuffer;
     <struct>struct</struct> vulkan_uniformbuffer *uniforms;
@@ -43,22 +42,21 @@
     bool include_depth;
 };
 </code></pre>
-      <p>Blah</p>
-    </section>
-    <div class="share">
-      <a href="https://www.reddit.com/submit?title=articles/vulkan_overview.html">Reddit</a>
-      -
-      <a href="http://news.ycombinator.com/submitlink?u=articles/vulkan_overview.html">Hacker News</a>
-    </div>
-  </main>
-  <hr />
-  <footer>
-    <a href="https://github.com/nathanmcmillan">GitHub</a>
-    ·
-    <a href="mailto:natemmcm@gmail.com">Email</a>
-    ·
-    <a href="/dark/articles/vulkan_overview.html">Dark Theme</a>
-  </footer>
-</body>
-
+        <p>Blah</p>
+      </section>
+      <div class="share">
+        <a href="https://www.reddit.com/submit?title=articles/vulkan_overview.html">Reddit</a>
+        -
+        <a href="http://news.ycombinator.com/submitlink?u=articles/vulkan_overview.html">Hacker News</a>
+      </div>
+    </main>
+    <hr />
+    <footer>
+      <a href="https://github.com/nathanmcmillan">GitHub</a>
+      ·
+      <a href="mailto:natemmcm@gmail.com">Email</a>
+      ·
+      <a href="/dark/articles/vulkan_overview.html">Dark Theme</a>
+    </footer>
+  </body>
 </html>
