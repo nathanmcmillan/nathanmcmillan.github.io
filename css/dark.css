@@ -4,7 +4,7 @@
   --link-font: rgb(255, 0, 77);
   --title-font: rgb(174, 129, 225);
   --separator-color: rgb(174, 129, 225);
-  --code: rgb(250, 248, 245);
+  --code: rgb(36, 41, 46);
   --date: rgb(174, 129, 225);
 }
 
@@ -236,6 +236,11 @@ code {
 }
 
 .top {
+  margin-bottom: 0.5rem;
+}
+
+.share {
+  text-align: center;
   margin-bottom: 0.5rem;
 }
 

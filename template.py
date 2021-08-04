@@ -47,6 +47,7 @@ def search_and_replace(path):
 
     content = "".join(out)
     content = content.replace('<!--this-->', path)
+    content = content.replace('<!--link-->', 'https://nathanmcmillan.github.io/' + path)
 
     with open(path, 'w', encoding='utf8') as file:
         file.write(content)

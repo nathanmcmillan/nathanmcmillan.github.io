@@ -221,6 +221,11 @@ code {
   margin-bottom: 0.5rem;
 }
 
+.share {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
 @media (max-width: 800px) {
   :root {
     --content: 90%;
