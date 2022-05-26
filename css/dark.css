@@ -26,9 +26,9 @@ footer a img {
 }
 
 html {
+  color: var(--main-font);
   background-color: var(--background);
   font-family: Georgia, Times, serif;
-  color: var(--main-font);
 }
 
 img {
@@ -42,6 +42,21 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+hr {
+  border-left: 0;
+  border-right: 0;
+  border-top: 1px solid var(--separator-color);
+  border-bottom: 1px solid var(--separator-color);
+  margin-left: auto;
+  margin-right: auto;
+  max-width: var(--content);
+  height: 1px;
+}
+
+.top {
+  margin-bottom: 0.5rem;
 }
 
 header {
@@ -67,6 +82,21 @@ header a {
 .header-left a {
   font-size: 1.2rem;
   margin-left: 0;
+}
+
+footer {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  max-width: var(--content);
+}
+
+footer a {
+  font-size: 1rem;
+  margin: 0.2rem;
 }
 
 main {
@@ -178,32 +208,6 @@ section p {
   margin-bottom: 1rem;
 }
 
-hr {
-  border-left: 0;
-  border-right: 0;
-  border-top: 1px solid var(--separator-color);
-  border-bottom: 1px solid var(--separator-color);
-  margin-left: auto;
-  margin-right: auto;
-  max-width: var(--content);
-  height: 1px;
-}
-
-footer {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
-  text-align: center;
-  max-width: var(--content);
-}
-
-footer a {
-  font-size: 1rem;
-  margin: 0.2rem;
-}
-
 pre {
   padding: 1rem;
   margin-bottom: 0.5rem;
@@ -233,10 +237,6 @@ code {
   font-size: 0.8rem;
   color: var(--date);
   margin-bottom: 1rem;
-}
-
-.top {
-  margin-bottom: 0.5rem;
 }
 
 .share {

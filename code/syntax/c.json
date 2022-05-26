@@ -8,7 +8,7 @@
     ["\\b(main)\\b", [null, "function"]],
     ["\\b(NULL)\\b", [null, "null"]],
     ["\\b(if|else|for|while|return|break|continue|goto)\\b", [null, "control"]],
-    ["\\b(struct)\\b", [null, "struct"]],
+    ["\\b(struct|enum)\\b", [null, "struct"]],
     ["\\b({%.*?})\\b", [null, "this"]],
     ["\\b(?:\\+|-)?\\d+(?:\\.\\d+)?f?\\b", ["number"]],
     ["(&)\\w+", [null, "pointer"]],

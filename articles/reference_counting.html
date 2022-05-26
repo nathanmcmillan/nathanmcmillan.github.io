@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Reference Counting</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="/css/light.css" />
+    <link rel="stylesheet" type="text/css" href="/css/code.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="header-left"><a href="/index.html">Nathan McMillan</a></div>
+      <div>
+        <!-- <a href="/articles.html">Articles</a>
+        · -->
+        <a href="/projects.html">Projects</a>
+        ·
+        <a href="/music.html">Music</a>
+        ·
+        <a href="/photos.html">Photos</a>
+        ·
+        <a href="/resume.html">Resume</a>
+      </div>
+    </header>
+    <hr class="top" />
+    <main>
+      <section>
+        <h1>Reference Counting Memory Management</h1>
+        <div>12 January 2022</div>
+        <p>Today we're going to take a look at how a scripting language can implement reference counting.</p>
+        <p>First we'll need to do is define our value types. To keep things simple, we'll have two primitives and two object types.</p>
+        <pre><code><struct>enum</struct> ValueType {
+    VALUE_BOOL,
+    VALUE_INTEGER,
+    VALUE_ARRAY,
+    VALUE_STRING,
+};
+</code></pre>
+        <p>We will use the combination of an enum plus a union in our struct so we can keep track of our value's type, and efficiently pack the data.</p>
+        <pre><code><struct>struct</struct> Value {
+    <struct>enum</struct> ValueType is;
+    union {
+        bool b;
+        <type>int</type> i;
+        Object *o;
+    } as;
+};
+</code></pre>
+        <p>
+          Our struct holds a pointer to an object. Our objects will live on the heap. For this article, our Object will simply contain an integer `count` to keep track of how many
+          references are holding it.
+        </p>
+        <p>As long as our object types hold an object struct as the first field in their own struct, we can safely down cast to an Object.</p>
+        <pre><code><struct>struct</struct> Object {
+    <type>int</type> count;
+};
+</code></pre>
+        <pre><code><struct>struct</struct> String {
+    Object object;
+    <type>char</type> *chars;
+};
+</code></pre>
+        <pre><code><struct>struct</struct> Array {
+    Object object;
+    Value *items;
+    <type>int</type> length;
+    <type>int</type> capacity;
+};
+</code></pre>
+        <p>Blah</p>
+        <pre><code><type>void</type> reference(Value value) {
+    switch (value.is) {
+    case VALUE_ARRAY:
+    case VALUE_STRING:
+        Object *object = (Object *)(value).as.o;
+        object-&gt;count++;
+    default:
+        <control>return</control>;
+    }
+}
+</code></pre>
+        <p>Blah</p>
+        <pre><code><type>void</type> dereference(Value value) {
+    switch (value.is) {
+    case VALUE_ARRAY: {
+        Array *array = (Array *)(value).as.o;
+        <type>int</type> count = array-&gt;object.count--;
+        <control>if</control> (count == <number>0</number>) {
+            free(array-&gt;items);
+            free(array);
+        }
+        <control>return</control>;
+    }
+    case VALUE_STRING: {
+        String *string = (String *)(value).as.o;
+        <type>int</type> count = string-&gt;object.count--;
+        <control>if</control> (count == <number>0</number>) {
+            free(string-&gt;chars);
+            free(string);
+        }
+        <control>return</control>;
+    }
+    default:
+        <control>return</control>;
+    }
+}
+</code></pre>
+        <p>Now any time there's something that involves looking at a value, we will need to reference and dereference appropriately.</p>
+        <p>For example, imagine a virtual machine with an `ADD` operation for two values. It might look like this</p>
+        <pre><code>case OP_ADD: {
+    Value b = pop(H);
+    Value a = pop(H);
+    <control>if</control> (is_int(a)) {
+        <control>if</control> (is_int(b)) {
+            a.as.i += b.as.i;
+            push(H, a);
+        }
+    } <control>else</control> <control>if</control> (is_string(a)) {
+        push_intern_string(H, value_concat(a, b));
+    }
+    dereference(H, a);
+    dereference(H, b);
+    <control>break</control>;
+}
+</code></pre>
+        <p>
+          Typically, many references and dereferences will be due to pushing and popping from the stack. However, we'll need to keep in mind values that reference other values. For
+          instance, our array object will need to push values to it.
+        </p>
+        <pre><code>case OP_ARRAY_PUSH: {
+    <control>break</control>;
+}
+</code></pre>
+        <p>Something about optimizations</p>
+        <p>For a working implementation of this code, check out <a href="https://hymn-lang.org">Hymn Script</a>. A small intrepreted scripting language I wrote!</p>
+      </section>
+      <div class="share">
+        <a href="https://www.reddit.com/submit?title=https://nathanmcmillan.github.io/articles/reference_counting.html">Reddit</a>
+        ·
+        <a href="http://news.ycombinator.com/submitlink?u=https://nathanmcmillan.github.io/articles/reference_counting.html">Hacker News</a>
+      </div>
+    </main>
+    <hr />
+    <footer>
+      <a href="https://github.com/nathanmcmillan">GitHub</a>
+      ·
+      <a href="mailto:natemmcm@gmail.com">Email</a>
+      ·
+      <a href="/dark/articles/reference_counting.html">Dark Theme</a>
+    </footer>
+  </body>
+</html>
