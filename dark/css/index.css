@@ -1,17 +1,20 @@
 :root {
-  --background: rgb(255, 255, 255);
-  --main-font: rgb(0, 0, 0);
+  --background: rgb(39, 40, 34);
+  --main-font: rgb(156, 220, 254);
   --link-font: rgb(255, 0, 77);
-  --title-font: rgb(0, 0, 0);
-  --separator-color: rgb(128, 128, 128);
-  --code: rgb(250, 248, 245);
-  --date: rgb(102, 102, 102);
+  --title-font: rgb(174, 129, 225);
+  --separator-color: rgb(174, 129, 225);
+  --code: rgb(36, 41, 46);
+  --date: rgb(174, 129, 225);
 }
 
-.photo-col img {
-  box-shadow: rgb(204, 204, 204) 0 0 10px 0;
+section a img {
+  filter: invert(0.75);
 }
 
+footer a img {
+  filter: invert(0.75);
+}
 :root {
   --content: 52rem;
 }
