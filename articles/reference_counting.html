@@ -11,8 +11,8 @@
     <header>
       <div class="header-left"><a href="/index.html">Nathan McMillan</a></div>
       <div>
-        <!-- <a href="/articles.html">Articles</a>
-        · -->
+        <a href="/articles.html">Articles</a>
+        ·
         <a href="/projects.html">Projects</a>
         ·
         <a href="/music.html">Music</a>
@@ -27,7 +27,7 @@
       <section>
         <h1>Reference Counting Memory Management</h1>
         <div>12 January 2022</div>
-        <p>Today we're going to take a look at how a scripting language can implement reference counting.</p>
+        <p>Today we're going to take a look at how we can implement reference counting for a scripting language.</p>
         <p>First we'll need to do is define our value types. To keep things simple, we'll have two primitives and two object types.</p>
         <pre><code><struct>enum</struct> ValueType {
     VALUE_BOOL,
